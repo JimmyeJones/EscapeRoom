@@ -4,7 +4,7 @@ st.title("Unscramble")
 words = ["tree", "ocean", "boat"]
 st.session_state["solved"] = []
 try:
-    st.session_state["scrambled"]
+    len(st.session_state["scrambled"])
 except KeyError:
     st.session_state["scrambled"] = []
 def scramble(a):
