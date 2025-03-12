@@ -4,10 +4,6 @@ st.title("Unscramble")
 scrambled = ["tere", "eonac", "otab"]
 words = ["tree", "ocean", "boat"]
 st.session_state["solved"] = []
-try:
-    ans
-except NameError:
-    ans = []
 def scramble(a):
     return string_utils.shuffle(a)
 for scrambled1 in scrambled:
@@ -17,3 +13,4 @@ for scrambled1 in scrambled:
                 st.session_state["solved"].append(scrambled.index(scrambled1))
     else:
         st.subheader(words[scrambled.index(scrambled1)])
+st.write(st.session_state["solved"])
