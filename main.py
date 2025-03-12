@@ -1,6 +1,6 @@
 import streamlit as st
 st.title("Unscrable")
-if st.input("eret") == "tree":
+if st.text_input("eret") == "tree":
   st.subheader("Great job!!!")
 st.markdown()
 st.title("Find the word")
