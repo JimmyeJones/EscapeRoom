@@ -2,8 +2,12 @@ import streamlit as st
 import string_utils
 st.title("Unscramble")
 words = ["tree", "ocean"]
-word_num = 0
-word_input = []
+try:
+    word_num
+    word_input
+except NameError:
+    word_num = 0
+    word_input = []
 for word in words:
     word_num += 1
     scrambled = string_utils.shuffle(word)
