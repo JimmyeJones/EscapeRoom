@@ -2,6 +2,7 @@ import streamlit as st
 import string_utils
 st.title("Welcome to the Sinclair Escape Room - 3rd Period!")
 st.subheader("Unscramble the following words:")
+st.write("*Note: type your answer in all lowercase letters*)
 
 words = st.secrets["words"]
 st.session_state["solved"] = []
