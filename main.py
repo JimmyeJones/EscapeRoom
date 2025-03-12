@@ -12,9 +12,9 @@ if len(st.session_state["scrambled"]) == 0:
         st.session_state["scrambled"].append(scramble(word))
         
 for scrambled1 in scrambled:
-    if is_in_ss(scrambled.index(scrambled1), st.session_state["solved"]) == False:
-        if st.text_input(scrambled1) == words[scrambled.index(scrambled1)]:
-            if scrambled.index(scrambled1) not in st.session_state["solved"]:
-                st.session_state["solved"].append(scrambled.index(scrambled1))
+    
+    if st.text_input(scrambled1) == words[scrambled.index(scrambled1)]:
+        if scrambled.index(scrambled1) not in st.session_state["solved"]:
+            st.session_state["solved"].append(scrambled.index(scrambled1))
 
 st.write(st.session_state["solved"])
