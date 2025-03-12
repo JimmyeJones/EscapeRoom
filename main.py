@@ -6,6 +6,7 @@ words = ["tree", "ocean", "boat"]
 if st.button("Reset Answers"):
     
     del st.session_state["solved"]
+    st.rerun()
 try:
     st.session_state["solved"]
 except KeyError:
