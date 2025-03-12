@@ -3,7 +3,7 @@ import string_utils
 st.title("Unscramble")
 scrambled = ["tere", "eonac", "otab"]
 words = ["tree", "ocean", "boat"]
-
+st.session_state["solved"] = []
 def scramble(a):
     return string_utils.shuffle(a)
 def is_in_ss(index, list):
