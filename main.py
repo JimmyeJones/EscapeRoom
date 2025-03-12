@@ -10,12 +10,12 @@ def is_in_ss(index, list):
     included = False
     for all in list:
         if index == all:
-            return False
+            return True
     if not included:         
-        return True
+        return False
         
 for scrambled1 in scrambled:
-    if is_in_ss(scrambled.index(scrambled1), st.session_state["solved"]):
+    if is_in_ss(scrambled.index(scrambled1), st.session_state["solved"]) == False:
         if st.text_input(scrambled1) == words[scrambled.index(scrambled1)]:
             if scrambled.index(scrambled1) not in st.session_state["solved"]:
                 st.session_state["solved"].append(scrambled.index(scrambled1))
