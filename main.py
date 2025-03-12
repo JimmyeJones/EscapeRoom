@@ -1,4 +1,4 @@
-import streamlit as st
+yimport streamlit as st
 import string_utils
 st.title("Unscramble")
 scrambled = ["tere", "eonac", "otab"]
@@ -8,7 +8,7 @@ if st.button("Reset Answers"):
     del st.session_state["solved"]
 try:
     st.session_state["solved"]
-except NameError:
+except KeyError:
     st.session_state["solved"] = []
 def scramble(a):
     return string_utils.shuffle(a)
