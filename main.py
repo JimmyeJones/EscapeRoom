@@ -24,3 +24,6 @@ for scrambled1 in scrambled:
             st.session_state["solved"].append(scrambled.index(scrambled1))
             st.success("Correct!")
 
+if len(st.session_state["solved"]) == len(scrambled):
+    st.balloons()
+    st.info(f"Congratulations! The final code is: {st.secrets["final_code"]}")
