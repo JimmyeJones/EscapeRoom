@@ -12,12 +12,10 @@ except NameError:
 def scramble(in):
     return string_utils.shuffle(in)
 
-try:
-    scrambled
-except NameError:
-    scrambled = []
-    for word in words:
-        scrambled.append(scramble(word))
+
+scrambled = []
+for word in words:
+    scrambled.append(scramble(word))
         
 for scrambled_word in scrambled:
     solved1 = st.text_input(scrambled_word)
