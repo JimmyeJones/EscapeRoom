@@ -26,4 +26,4 @@ for scrambled1 in scrambled:
 
 if len(st.session_state["solved"]) == len(scrambled):
     st.balloons()
-    st.info(f"Congratulations! The final code is: {st.secrets["final_code"]}")
+    st.info(f"Congratulations! The final code is: '{st.secrets["final_code"]}'")
