@@ -2,7 +2,8 @@ import streamlit as st
 import string_utils
 st.title("Welcome to the Sinclair Escape Room - 3rd Period!")
 st.subheader("Unscramble the following words:")
-words = ["tree", "ocean", "boat"]
+
+words = st.secrets["words"]
 st.session_state["solved"] = []
 try:
     len(st.session_state["scrambled"])
