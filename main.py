@@ -1,7 +1,7 @@
 import streamlit as st
 import string_utils
 st.title("Unscramble")
-words = ["tree", "ocean"]
+words = ["tree", "ocean", "boat"]
 try: 
     solved
 except NameError:
