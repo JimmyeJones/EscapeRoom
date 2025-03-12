@@ -10,6 +10,6 @@ except NameError:
 def scramble(a):
     return string_utils.shuffle(a)
 for scrambled1 in scrambled:
-    ans[scrambled1.len(scrambled)] = st.text_input(scrambled1)
+    ans[scrambled.index(scrambled1)] = st.text_input(scrambled1)
 
 st.write(ans)
