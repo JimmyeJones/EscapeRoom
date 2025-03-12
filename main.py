@@ -15,4 +15,3 @@ for scrambled1 in scrambled:
         if scrambled.index(scrambled1) not in st.session_state["solved"]:
             st.session_state["solved"].append(scrambled.index(scrambled1))
 
-st.write(st.session_state["solved"])
