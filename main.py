@@ -3,23 +3,16 @@ import string_utils
 st.title("Unscramble")
 scrambled = ["tere", "eonac", "otab"]
 words = ["tree", "ocean", "boat"]
-if st.button("Reset Answers"):
-    
-    del st.session_state["solved"]
-    st.rerun()
-try:
-    st.session_state["solved"]
-except KeyError:
-    st.session_state["solved"] = []
+
 def scramble(a):
     return string_utils.shuffle(a)
 def is_in_ss(index, list):
     included = False
     for all in list:
         if index in all:
-            return True
+            return False
     if not included:         
-        return False
+        return True
         
 for scrambled1 in scrambled:
     if is_in_ss(scrambled.index(scrambled1), st.session_state["solved"]):
