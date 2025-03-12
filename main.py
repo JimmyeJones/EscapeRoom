@@ -13,4 +13,4 @@ for scrambled1 in scrambled:
                 st.session_state["solved"].append(scrambled.index(scrambled1))
     else:
         st.subheader(words[scrambled.index(scrambled1)])
-st.write(st.session_state["solved"]{0})
+st.write(st.session_state["solved"])
