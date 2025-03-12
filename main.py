@@ -9,7 +9,7 @@ def scramble(a):
 def is_in_ss(index, list):
     included = False
     for all in list:
-        if index in all:
+        if index == all:
             return False
     if not included:         
         return True
