@@ -3,7 +3,7 @@ import string_utils
 st.title("Welcome to the Sinclair Escape Room - 3rd Period!")
 st.subheader("Unscramble the following words:")
 st.write("*Note: type your answer in all lowercase letters*")
-
+st.write("*Dashes and spaces are NOT in set positions*")
 words = st.secrets["words"]
 st.session_state["solved"] = []
 try:
