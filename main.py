@@ -1,4 +1,4 @@
-yimport streamlit as st
+import streamlit as st
 import string_utils
 st.title("Unscramble")
 scrambled = ["tere", "eonac", "otab"]
