@@ -3,7 +3,10 @@ import string_utils
 st.title("Unscramble")
 words = ["tree", "ocean", "boat"]
 st.session_state["solved"] = []
-st.session_state["scrambled"] = []
+try:
+    st.session_state["scrambled"]
+except KeyError:
+    st.session_state["scrambled"] = []
 def scramble(a):
     return string_utils.shuffle(a)
 if len(st.session_state["scrambled"]) == 0:
