@@ -11,7 +11,11 @@ try:
 except KeyError:
     st.session_state["scrambled"] = []
 def scramble(a):
-    return string_utils.shuffle(a)
+    scramble_word = string_utils.shuffle(a)
+    while scramble_word == a:
+        scramble_word = string_utils.shuffle(a)
+    return scramble_word
+        
 if len(st.session_state["scrambled"]) == 0:
     for word in words:
         st.session_state["scrambled"].append(scramble(word))
