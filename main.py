@@ -30,4 +30,13 @@ for scrambled1 in scrambled:
 
 if len(st.session_state["solved"]) == len(scrambled):
     st.balloons()
-    st.info(f"Congratulations! The final code is: '{st.secrets["final_code"]}'")
+    st.info(f"Congratulations! You must now make a sentence using all the words.")
+    st.subheader("Complete the sentence:")
+    st.write("Note: Words may only be used once")
+    st.write("The sentence is read from top to bottom")
+    w1 = st.selectbox("", words)
+    w2 = st.selectbox("", words)
+    w3 = st.selectbox("", words)
+    w4 = st.selectbox("", words)
+    w5 = st.selectbox("", words)
+    
