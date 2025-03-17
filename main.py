@@ -35,8 +35,4 @@ if len(st.session_state["solved"]) == len(scrambled):
     st.write("Note: Words may only be used once")
     st.write("The sentence is read from top to bottom")
     w1 = st.selectbox("", words)
-    w2 = st.selectbox("", words)
-    w3 = st.selectbox("", words)
-    w4 = st.selectbox("", words)
-    w5 = st.selectbox("", words)
     
