@@ -5,6 +5,7 @@ st.subheader("Unscramble the following words:")
 st.write("*Note: type your answer in all lowercase letters*")
 st.write("*Dashes are NOT in set positions*")
 words = st.secrets["words"]
+final_code = st.secrets["]
 st.session_state["solved"] = []
 try:
     len(st.session_state["scrambled"])
