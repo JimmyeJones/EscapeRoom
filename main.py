@@ -38,5 +38,5 @@ if len(st.session_state["solved"]) == len(scrambled):
     st.write("The sentence is read from top to bottom")
     for sentence in sentences:
         for word_in_sent in sentence:
-            if word in words:
+            if word_in_sent in words:
                 st.selectbox("", words)
