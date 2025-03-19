@@ -10,6 +10,10 @@ sentences = st.secrets["sentences"]
 final_code = st.secrets["final_code"]
 st.session_state["solved"] = []
 try:
+    len(st.session_state["correct_sent_ans"])
+except KeyError:
+    st.session_state["correct_sent_ans"] = []
+try:
     len(st.session_state["scrambled"])
 except KeyError:
     st.session_state["scrambled"] = []
@@ -35,14 +39,17 @@ if len(st.session_state["solved"]) == len(scrambled):
     st.balloons()
     st.info(f"Congratulations! You must now make a sentence using all the words.")
     st.subheader("Complete the sentence:")
-    st.write("Note: Words may only be used once")
-    st.write("The sentence is read from top to bottom")
+    st.write("Note: Words may be used more than once")
     st.divider()
+    st.write(st.session_state["correct_sent_ans"])
     for sentence in sentences:
         for word_in_sent in sentence.split():
             
             if word_in_sent in words:
-                st.selectbox("", words, key=uuid.uuid4().int)
+                if word_in_sent == st.selectbox("", words, key=uuid.uuid4().int):
+                    st.session_state["correct_sent_ans"][sentences.index(sentence)] = True
+                else:
+                    st.session_state["correct_sent_ans"][sentences.index(sentence)] = False
             else:
                 st.write(word_in_sent)
         st.divider()
