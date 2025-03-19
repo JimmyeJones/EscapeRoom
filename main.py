@@ -52,7 +52,7 @@ if True:
         for word_in_sent in sentence.split():
             
             if word_in_sent in words:
-                st.secrets["sent_ans"][sentences.index(sentence)][words.index(word_in_sent)] == st.selectbox("", words, key=uuid.uuid4().int):
+                st.secrets["sent_ans"][sentences.index(sentence)][words.index(word_in_sent)] == st.selectbox("", words, key=uuid.uuid4().int)
                     
             else:
                 st.write(word_in_sent)
