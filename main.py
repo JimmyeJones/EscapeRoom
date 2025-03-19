@@ -10,13 +10,13 @@ sentences = st.secrets["sentences"]
 final_code = st.secrets["final_code"]
 st.session_state["solved"] = []
 try:
-    len(st.session_state["correct_sent_ans"])
+    len(st.session_state["sent_ans"])
 except KeyError:
-    st.session_state["correct_sent_ans"] = []
+    st.session_state["sent_ans"] = []
     for x in sentences:
-        st.session_state["correct_sent_ans"].append([])
+        st.session_state["sent_ans"].append([])
         for g in x.split():
-            st.session_state["correct_sent_ans"][sentences.index(x)].append("e")
+            st.session_state["sent_ans"][sentences.index(x)].append(g)
         
 try:
     len(st.session_state["scrambled"])
@@ -46,16 +46,13 @@ if True:
     st.subheader("Complete the sentence:")
     st.write("Note: Words may be used more than once")
     st.divider()
-    st.write(st.session_state["correct_sent_ans"])
+    st.write(st.session_state["sent_ans"])
     for sentence in sentences:
         for word_in_sent in sentence.split():
             
             if word_in_sent in words:
-                if word_in_sent == st.selectbox("", words, key=uuid.uuid4().int):
-                    if st.session_state["correct_sent_ans"][sentences.index(sentence)] != False:
-                        st.session_state["correct_sent_ans"][sentences.index(sentence)] = True
-                else:
-                    st.session_state["correct_sent_ans"][sentences.index(sentence)] = False
+                st.secrets["sent_ans"][sentences.index(sentence)][words.index(word_in_sent)] == st.selectbox("", words, key=uuid.uuid4().int):
+                    
             else:
                 st.write(word_in_sent)
         st.divider()
