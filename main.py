@@ -5,7 +5,7 @@ st.subheader("Unscramble the following words:")
 st.write("*Note: type your answer in all lowercase letters*")
 st.write("*Dashes are NOT in set positions*")
 words = st.secrets["words"]
-sentence = st.secrets["sentence"]
+sentences = st.secrets["sentences"]
 final_code = st.secrets["final_code"]
 st.session_state["solved"] = []
 try:
@@ -37,4 +37,7 @@ if len(st.session_state["solved"]) == len(scrambled):
     st.write("Note: Words may only be used once")
     st.write("The sentence is read from top to bottom")
     w1 = st.selectbox("", words)
-    
+for sentence in sentences:
+    for word_in_sent in sentence:
+        if word in words:
+            st.selectbox("
