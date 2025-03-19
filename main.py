@@ -55,7 +55,7 @@ if True:
             
             if word_in_sent in words:
                 temp_ans = st.selectbox("", words, key=uuid.uuid4().int)
-                if st.button("Submit"):
+                if st.button("Submit", key=uuid.uuid4().int):
                     st.session_state["sent_ans"][sentences.index(sentence)][words.index(word_in_sent)] = temp_ans
                     st.info("Your selection has been submitted.")
                     
