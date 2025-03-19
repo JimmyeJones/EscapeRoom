@@ -37,8 +37,8 @@ for scrambled1 in scrambled:
             st.session_state["solved"].append(scrambled.index(scrambled1))
             st.success("Correct!")
 
-if len(st.session_state["solved"]) == len(scrambled):
-    st.balloons()
+#if len(st.session_state["solved"]) == len(scrambled):
+ if True:
     st.info(f"Congratulations! You must now make a sentence using all the words.")
     st.subheader("Complete the sentence:")
     st.write("Note: Words may be used more than once")
