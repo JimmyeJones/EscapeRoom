@@ -54,11 +54,7 @@ if True:
         for word_in_sent in sentence.split():
             
             if word_in_sent in words:
-                temp_ans = st.selectbox("", words, key=uuid.uuid4().int, index=words.index(st.session_state["sent_ans"][sentences.index(sentence)][words.index(word_in_sent)]))
-                if st.button("Submit", key=uuid.uuid4().int):
-                    st.session_state["sent_ans"][sentences.index(sentence)][words.index(word_in_sent)] = temp_ans
-                    st.info("Your selection has been submitted.")
-                    
+                st.session_state["sent_ans"][sentences.index(sentence)][words.index(word_in_sent)] = st.selectbox("", words, key=uuid.uuid4().int)                 
             else:
                 st.write(word_in_sent)
         st.divider()
