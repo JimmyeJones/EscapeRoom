@@ -37,6 +37,7 @@ if len(st.session_state["solved"]) == len(scrambled):
     st.subheader("Complete the sentence:")
     st.write("Note: Words may only be used once")
     st.write("The sentence is read from top to bottom")
+    st.markdown()
     for sentence in sentences:
         for word_in_sent in sentence.split():
             
@@ -44,3 +45,4 @@ if len(st.session_state["solved"]) == len(scrambled):
                 st.selectbox("", words, key=uuid.uuid4().int)
             else:
                 st.write(word_in_sent)
+        st.markdown()
