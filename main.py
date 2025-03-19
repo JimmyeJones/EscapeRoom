@@ -44,7 +44,7 @@ for scrambled1 in scrambled:
             st.success("Correct!")
 
 #if len(st.session_state["solved"]) == len(scrambled):
-if True:
+if True:   #for testing
     st.info(f"Congratulations! You must now make a sentence using all the words.")
     st.subheader("Complete the sentence:")
     st.write("Note: Words may be used more than once")
