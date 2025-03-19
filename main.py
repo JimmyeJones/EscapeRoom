@@ -1,5 +1,6 @@
 import streamlit as st
 import string_utils
+import uuid
 st.title("Welcome to the Sinclair Escape Room - 3rd Period!")
 st.subheader("Unscramble the following words:")
 st.write("*Note: type your answer in all lowercase letters*")
@@ -40,4 +41,4 @@ if len(st.session_state["solved"]) == len(scrambled):
         for word_in_sent in sentence.split():
             
             if word_in_sent in words:
-                st.selectbox("", words)
+                st.selectbox("", words, key=uuid.uuid4().int)
