@@ -13,6 +13,8 @@ try:
     len(st.session_state["correct_sent_ans"])
 except KeyError:
     st.session_state["correct_sent_ans"] = []
+    for x in sentences:
+        st.session_state["correct_sent_ans"].append("")
 try:
     len(st.session_state["scrambled"])
 except KeyError:
@@ -47,7 +49,8 @@ if len(st.session_state["solved"]) == len(scrambled):
             
             if word_in_sent in words:
                 if word_in_sent == st.selectbox("", words, key=uuid.uuid4().int):
-                    st.session_state["correct_sent_ans"][sentences.index(sentence)] = True
+                    if st.session_state["correct_sent_ans"][sentences.index(sentence)] != False:
+                        st.session_state["correct_sent_ans"][sentences.index(sentence)] = True
                 else:
                     st.session_state["correct_sent_ans"][sentences.index(sentence)] = False
             else:
