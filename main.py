@@ -18,6 +18,8 @@ except KeyError:
         for g in x.split():
             if g not in words:
                 st.session_state["sent_ans"][sentences.index(x)].append(g)
+            else:
+                st.session_state["sent_ans"][sentences.index(x)].append("")
         
 try:
     len(st.session_state["scrambled"])
