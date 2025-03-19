@@ -42,3 +42,5 @@ if len(st.session_state["solved"]) == len(scrambled):
             
             if word_in_sent in words:
                 st.selectbox("", words, key=uuid.uuid4().int)
+            else:
+                st.write(word_in_sent)
