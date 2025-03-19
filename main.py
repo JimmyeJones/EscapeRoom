@@ -14,7 +14,7 @@ try:
 except KeyError:
     st.session_state["correct_sent_ans"] = []
     for x in sentences:
-        st.session_state["correct_sent_ans"].append("")
+        st.session_state["correct_sent_ans"].append([])
         for g in x.split():
             st.session_state["correct_sent_ans"][sentences.index(x)].append("")
         
