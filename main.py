@@ -42,17 +42,29 @@ for scrambled1 in scrambled:
      st.info(f"Congratulations! You must now make a sentence using all the words.")
      st.subheader("Complete the sentence:")
      st.write("Note: Words may be used more than once")
+
      st.divider()
+
      st.write(st.session_state["correct_sent_ans"])
+
      for sentence in sentences:
-        for word_in_sent in sentence.split():
+
+         for word_in_sent in sentence.split():
             
-            if word_in_sent in words:
-                if word_in_sent == st.selectbox("", words, key=uuid.uuid4().int):
-                    if st.session_state["correct_sent_ans"][sentences.index(sentence)] != False:
-                        st.session_state["correct_sent_ans"][sentences.index(sentence)] = True
-                else:
-                    st.session_state["correct_sent_ans"][sentences.index(sentence)] = False
-            else:
-                st.write(word_in_sent)
+
+             if word_in_sent in words:
+
+                 if word_in_sent == st.selectbox("", words, key=uuid.uuid4().int):
+
+                     if st.session_state["correct_sent_ans"][sentences.index(sentence)] != False:
+
+                         st.session_state["correct_sent_ans"][sentences.index(sentence)] = True
+
+             else:
+
+                 st.session_state["correct_sent_ans"][sentences.index(sentence)] = False
+
+         else:
+
+             st.write(word_in_sent)
         st.divider()
