@@ -73,24 +73,26 @@ if len(st.session_state["solved1"]) == len(scrambled):
         else:
             st.session_state["solved"][st.session_state["sent_ans"].index(sentence1)] = False
         #st.write(sentences[st.session_state["sent_ans"].index(sentence1)].lower())
-error_codes = []
-show_code = ""
-for check in st.session_state["solved"]:
-    if check == False:
-        show_code = False
-        error_codes.append(st.session_state["solved"].index(check))
-    if show_code != False and check == True:
-        show_code = True
-st.write(st.session_state["solved"])
-st.write(error_codes)
-error_codes1 = []
-for error_code in error_codes:
-    code1 = (int(error_code))**5
-    error_codes1.append(code1)
-    st.write(code1)
-if show_code == True:
-    st.title("The final code is:")
-    st.subheader(st.secrets["final_code"])
-elif show_code == False:
-    st.write(error_codes1)
-    st.error(f"Whoops! You have selected (an) incorrect answer(s). Error Code(s): {str(error_codes1)}")
+    error_codes = []
+    show_code = ""
+    for check in st.session_state["solved"]:
+        if check == False:
+            show_code = False
+        if show_code != False and check == True:
+            show_code = True
+    for index, value in enumerate(st.session_state["solved"]):
+        if value == False:
+            error_codes.append(index)
+    st.write(st.session_state["solved"])
+    st.write(error_codes)
+    error_codes1 = []
+    for error_code in error_codes:
+        code1 = (int(error_code))**5
+        error_codes1.append(code1)
+        st.write(code1)
+    if show_code == True:
+        st.title("The final code is:")
+        st.subheader(st.secrets["final_code"])
+    elif show_code == False:
+        st.write(error_codes1)
+        st.error(f"Whoops! You have selected (an) incorrect answer(s). Error Code(s): {str(error_codes1)}")
