@@ -69,5 +69,6 @@ if True:   #for testing
             st.session_state["solved"][st.session_state["sent_ans"].index(sentence1)] = True
         else:
             st.session_state["solved"][st.session_state["sent_ans"].index(sentence1)] = False
-
+st.write(sentences[st.session_state["sent_ans"].index(sentence1)].lower())
+st.write(" ".join(sentence1).lower())
 st.write(st.session_state["solved"])
