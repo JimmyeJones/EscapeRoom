@@ -65,7 +65,7 @@ if True:   #for testing
                 st.write(word_in_sent)
         st.divider()
     for sentence1 in st.session_state["sent_ans"]:
-        if " ".join(sentence1).lower() == sentences[sentence1.index(st.session_state["sent_ans"])].lower():
+        if " ".join(sentence1).lower() == sentences[st.session_state["sent_ans"].index(sentence1)].lower():
             st.session_state["solved"][st.session_state["sent_ans"].index(sentence1)] = True
         else:
             st.session_state["solved"][st.session_state["sent_ans"].index(sentence1)] = False
