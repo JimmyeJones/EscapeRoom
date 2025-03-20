@@ -81,6 +81,7 @@ for check in st.session_state["solved"]:
         error_codes.append(st.session_state["solved"].index(check))
     if show_code != False and check == True:
         show_code = True
+st.write(st.session_state["solved"])
 st.write(error_codes)
 error_codes1 = []
 for error_code in error_codes:
