@@ -8,7 +8,13 @@ st.write("*Dashes are NOT in set positions*")
 words = st.secrets["words"]
 sentences = st.secrets["sentences"]
 final_code = st.secrets["final_code"]
-st.session_state["solved"] = []
+try:
+    len(st.session_state["solved"])
+except KeyError:
+    st.session_state["solved"] = []
+    for sentence in sentences:
+        st.session_state["solved"].append("")
+
 try:
     len(st.session_state["sent_ans"])
 except KeyError:
@@ -58,3 +64,10 @@ if True:   #for testing
             else:
                 st.write(word_in_sent)
         st.divider()
+    for sentence1 in st.session_state["sent_ans"]:
+        if " ".join(sentence1).lower() == sentences[sentence1.index(st.session_state["sent_ans"])].lower():
+            st.session_state["solved"][st.session_state["sent_ans"].index(sentence1)] = True
+        else:
+            st.session_state["solved"][st.session_state["sent_ans"].index(sentence1)] = False
+
+st.write(st.session_state["solved"])
