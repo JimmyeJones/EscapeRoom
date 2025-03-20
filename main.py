@@ -9,6 +9,10 @@ words = st.secrets["words"]
 sentences = st.secrets["sentences"]
 final_code = st.secrets["final_code"]
 try:
+    len(st.session_state["solved1"])
+except KeyError:
+    st.session_state["solved1"] = []
+try:
     len(st.session_state["solved"])
 except KeyError:
     st.session_state["solved"] = []
@@ -45,8 +49,8 @@ scrambled = st.session_state["scrambled"]
 for scrambled1 in scrambled:
     
     if st.text_input(scrambled1.lower()) == words[scrambled.index(scrambled1)].lower():
-        if scrambled.index(scrambled1) not in st.session_state["solved"]:
-            st.session_state["solved"].append(scrambled.index(scrambled1))
+        if scrambled.index(scrambled1) not in st.session_state["solved1"]:
+            st.session_state["solved1"].append(scrambled.index(scrambled1))
             st.success("Correct!")
 
 if len(st.session_state["solved"]) == len(scrambled):
