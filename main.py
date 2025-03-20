@@ -55,7 +55,6 @@ if True:   #for testing
     st.subheader("Complete the sentence:")
     st.write("Note: Words may be used more than once")
     st.divider()
-    st.write(st.session_state["sent_ans"])
     for sentence in sentences:
         for word_in_sent in sentence.split():
             
