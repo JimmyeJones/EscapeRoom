@@ -1,4 +1,10 @@
-Well, well, well....
+Well, well, well...
 Do you need to know what your error codes mean?
 Here's your answer to your problems:
-y=
+y=(2x+4)^3-3x
+Good luck!!!
+
+
+
+
+Oh and by the way, a list starts at zero in programming!
