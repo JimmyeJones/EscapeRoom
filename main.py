@@ -77,6 +77,10 @@ st.write(st.session_state["solved"])
 for check in st.session_state["solved"]:
     if check == False:
         show_code = False
-    elif show_code == False and check == True:
-        show_code = False
+    if show_code != False and check == True:
+        show_code = True
+if show_code == True:
+    st.subheader(st.secrets["final_code"])
+else:
+    st.error(f"Whoops! You have selected (an) incorrect answer(s). Error Code(s): {", ".join(error_codes)}")
         
