@@ -53,7 +53,7 @@ for scrambled1 in scrambled:
             st.session_state["solved1"].append(scrambled.index(scrambled1))
             st.success("Correct!")
 
-if len(st.session_state["solved"]) == len(scrambled):
+if len(st.session_state["solved1"]) == len(scrambled):
 #if True:   for testing
     st.info(f"Congratulations! You must now make a sentence using all the words.")
     st.subheader("Complete the sentences:")
