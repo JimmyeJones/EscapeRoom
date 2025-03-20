@@ -74,13 +74,16 @@ if len(st.session_state["solved1"]) == len(scrambled):
             st.session_state["solved"][st.session_state["sent_ans"].index(sentence1)] = False
         st.write(sentences[st.session_state["sent_ans"].index(sentence1)].lower())
 st.write(st.session_state["solved"])
+error_codes = []
 for check in st.session_state["solved"]:
     if check == False:
         show_code = False
+        error_codes.append(
     if show_code != False and check == True:
         show_code = True
+error_codes1 = []
 if show_code == True:
     st.subheader(st.secrets["final_code"])
 else:
     st.error(f"Whoops! You have selected (an) incorrect answer(s). Error Code(s): {", ".join(error_codes)}")
-        
+
