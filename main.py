@@ -75,6 +75,7 @@ if len(st.session_state["solved1"]) == len(scrambled):
         st.write(sentences[st.session_state["sent_ans"].index(sentence1)].lower())
 st.write(st.session_state["solved"])
 error_codes = []
+show_code = True
 for check in st.session_state["solved"]:
     if check == False:
         show_code = False
