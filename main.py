@@ -99,4 +99,4 @@ if len(st.session_state["solved1"]) == len(scrambled):
             st.error(f"Whoops! You have selected an incorrect answer. Error Code: {str(error_codes1)}")
         else:
             st.error(f"Whoops! You have selected incorrect answers. Error Codes: {str(error_codes1)}")
-        st.text("*Hint: This website's code is stored on Github.*\n *x2 Hint: Look for a link*")
+        st.text("*Hint: This site's code is stored on Github.*\n *Hint x2: There may be a link somewhere... 🤔*")
