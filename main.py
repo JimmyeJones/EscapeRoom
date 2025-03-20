@@ -60,7 +60,7 @@ if True:   #for testing
         for word_in_sent in sentence.split():
             
             if word_in_sent in words:
-                st.session_state["sent_ans"][sentences.index(sentence)][words.index(word_in_sent)] = st.selectbox("", words, key=f"{sentences.index(sentence)}{words.index(word_in_sent)}")                 
+                st.session_state["sent_ans"][sentences.index(sentence)][sentence.index(word_in_sent)] = st.selectbox("", words, key=f"{sentences.index(sentence)}{sentence.index(word_in_sent)}")                 
             else:
                 st.write(word_in_sent)
         st.divider()
