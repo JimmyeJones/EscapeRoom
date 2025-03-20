@@ -51,7 +51,7 @@ for scrambled1 in scrambled:
     if st.text_input(scrambled1.lower()) == words[scrambled.index(scrambled1)].lower():
         if scrambled.index(scrambled1) not in st.session_state["solved1"]:
             st.session_state["solved1"].append(scrambled.index(scrambled1))
-            st.success("Correct!")
+        st.success("Correct!")
 
 if len(st.session_state["solved1"]) == len(scrambled):
 #if True:   for testing
