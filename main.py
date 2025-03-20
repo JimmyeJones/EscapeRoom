@@ -89,5 +89,4 @@ if show_code == True:
     st.title("The final code is:")
     st.subheader(st.secrets["final_code"])
 elif show_code == False:
-    st.error(f"Whoops! You have selected (an) incorrect answer(s). Error Code(s): {", ".join(error_codes1)}")
-
+    st.error(f"Whoops! You have selected (an) incorrect answer(s). Error Code(s): {", ".join(str(error_codes1))}")
