@@ -83,7 +83,7 @@ for check in st.session_state["solved"]:
         show_code = True
 error_codes1 = []
 for error_code in error_codes:
-    code1 = error_code*5
+    code1 = int(error_code)*5
     error_codes1.append(code1)
 if show_code == True:
     st.title("The final code is:")
