@@ -87,7 +87,7 @@ if len(st.session_state["solved1"]) == len(scrambled):
     st.write(error_codes)
     error_codes1 = []
     for error_code in error_codes:
-        code1 = ((int(error_code)*2)+4)**3
+        code1 = ((int(error_code)*2)+4)**3-(int(error_code)*3)
         error_codes1.append(code1)
         st.write(code1)
     if show_code == True:
