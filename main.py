@@ -78,12 +78,15 @@ error_codes = []
 for check in st.session_state["solved"]:
     if check == False:
         show_code = False
-        error_codes.append(
+        error_codes.append(st.session_state["solved"].index(check))
     if show_code != False and check == True:
         show_code = True
 error_codes1 = []
+for error_code in error_codes:
+    code1 = error_code*5
+    error_codes1.append(code1)
 if show_code == True:
     st.subheader(st.secrets["final_code"])
 else:
-    st.error(f"Whoops! You have selected (an) incorrect answer(s). Error Code(s): {", ".join(error_codes)}")
+    st.error(f"Whoops! You have selected (an) incorrect answer(s). Error Code(s): {", ".join(error_codes1)}")
 
