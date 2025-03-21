@@ -5,6 +5,7 @@ st.title("Welcome to the Sinclair Escape Room - 3rd Period!")
 st.subheader("Unscramble the following words:")
 st.write("*Note: type your answer in all lowercase letters*")
 st.write("*Dashes are NOT in set positions*")
+st.write("Your answers will NOT be saved after this page has been reloaded.")
 words = st.secrets["words"]
 sentences = st.secrets["sentences"]
 final_code = st.secrets["final_code"]
