@@ -91,7 +91,6 @@ if len(st.session_state["solved1"]) == len(scrambled):
     for error_code in error_codes:
         code1 = ((int(error_code)*2)+4)**3-(int(error_code)*3)
         error_codes1.append(code1)
-        st.write(code1)
     if show_code == True:
         st.title("The final code is:")
         st.subheader(st.secrets["final_code"])
