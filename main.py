@@ -86,8 +86,7 @@ if len(st.session_state["solved1"]) == len(scrambled):
     for index, value in enumerate(st.session_state["solved"]):
         if value == False:
             error_codes.append(index)
-    st.write(st.session_state["solved"])
-    st.write(error_codes)
+
     error_codes1 = []
     for error_code in error_codes:
         code1 = ((int(error_code)*2)+4)**3-(int(error_code)*3)
@@ -97,7 +96,6 @@ if len(st.session_state["solved1"]) == len(scrambled):
         st.title("The final code is:")
         st.subheader(st.secrets["final_code"])
     elif show_code == False:
-        st.write(error_codes1)
         if len(error_codes1) == 1:
             st.error(f"Whoops! You have selected an incorrect answer. Error Code: {str(error_codes1)}")
         else:
