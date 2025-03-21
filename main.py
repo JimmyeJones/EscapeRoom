@@ -6,6 +6,8 @@ st.subheader("Unscramble the following words:")
 st.write("*Note: type your answer in all lowercase letters*")
 st.write("*Dashes are NOT in set positions*")
 st.write("Your answers will NOT be saved after this page has been reloaded.")
+st.subheader("Scenario")
+st.write("You are trapped inside of General Zaroff’s trophy room and have to escape. There are notes in the room with scrambled up words on them. They aeration to the word lock on the door. In order to escape before general Zaroff gets suspicious, solve the problems below to break out!")
 words = st.secrets["words"]
 sentences = st.secrets["sentences"]
 final_code = st.secrets["final_code"]
