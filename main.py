@@ -2,9 +2,6 @@ import streamlit as st
 import string_utils
 import uuid
 st.title("Welcome to the Sinclair Escape Room - 3rd Period!")
-st.subheader("Unscramble the following words:")
-st.write("*Note: type your answer in all lowercase letters*")
-st.write("*Dashes are NOT in set positions*")
 st.write("Your answers will NOT be saved after this page has been reloaded.")
 st.subheader("Scenario")
 st.write("You are trapped inside of General Zaroff’s trophy room and have to escape. There are notes in the room with scrambled up words on them. They aeration to the word lock on the door. In order to escape before general Zaroff gets suspicious, solve the problems below to break out!")
@@ -15,6 +12,9 @@ st.subheader("First, complete the wordle.")
 st.link_button("Open Wordle", "https://mywordle.strivemath.com/?word=uotke")
 if st.secrets["wordle"] in st.text_input("""Enter the "Copy This Attempt" from the Wordle"""):
     st.success("Great Job!")
+    st.subheader("Unscramble the following words:")
+    st.write("*Note: type your answer in all lowercase letters*")
+    
     try:
         len(st.session_state["solved1"])
     except KeyError:
