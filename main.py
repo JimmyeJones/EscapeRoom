@@ -10,7 +10,7 @@ sentences = st.secrets["sentences"]
 final_code = st.secrets["final_code"]
 st.subheader("First, complete the wordle.")
 st.link_button("Open Wordle", "https://mywordle.strivemath.com/?word=uotke")
-if st.secrets["wordle"] in st.text_input("""Enter the "Copy This Attempt" from the Wordle"""):
+if st.secrets["wordle"] in st.text_input("""Enter the "Copy This Attempt" from the Wordle""", type="password"):
     st.success("Great Job!")
     st.subheader("Unscramble the following words:")
     st.write("*Note: type your answer in all lowercase letters*")
