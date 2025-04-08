@@ -14,7 +14,6 @@ if st.secrets["wordle"] in st.text_input("""Enter the "Copy This Attempt" from t
     st.success("Great Job!")
     st.subheader("Unscramble the following words:")
     st.write("*Note: type your answer in all lowercase letters*")
-    st.title("Hints")
     try:
         len(st.session_state["solved1"])
     except KeyError:
