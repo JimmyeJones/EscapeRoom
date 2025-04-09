@@ -53,8 +53,8 @@ if st.secrets["wordle"] in st.text_input("""Enter the "Copy This Attempt" from t
     scrambled = st.session_state["scrambled"]
             
     for scrambled1 in scrambled:
-        
-        if st.text_input(scrambled1.lower()) == words[scrambled.index(scrambled1)].lower():
+        word_num = scrambled.index(scrambled1)
+        if st.text_input(f"#{word_num}. '{scrambled1.lower()}'") == words[scrambled.index(scrambled1)].lower():
             if scrambled.index(scrambled1) not in st.session_state["solved1"]:
                 st.session_state["solved1"].append(scrambled.index(scrambled1))
             st.success("Correct!")
