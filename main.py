@@ -1,7 +1,7 @@
 import streamlit as st
 import string_utils
 import uuid
-st.title("Welcome to the Sinclair Escape Room - 3rd Period!")
+st.title("The Scrambled Island Escape Room")
 st.write("Your answers will NOT be saved after this page has been reloaded.")
 st.subheader("Scenario")
 st.write("You are trapped inside of General Zaroff’s trophy room and have to escape. There are notes in the room with scrambled up words on them. They aeration to the word lock on the door. In order to escape before general Zaroff gets suspicious, solve the problems below to break out!")
