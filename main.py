@@ -15,7 +15,7 @@ if st.secrets["wordle"] in st.text_input("""Enter the "Copy This Attempt" from t
     st.subheader("Unscramble the following words:")
     st.write("*Note: type your answer in all lowercase letters*")
     st.subheader("Hints:")
-    st.write("3 - Where he was headed")
+    st.write("3 - Where Rainsford was headed")
     st.write("7 - Zarroff has a room with this in it")
     st.write("12 - What Rainsford and Zarroff are called")
     st.write("13 - Zarroff wanted something difficult")
